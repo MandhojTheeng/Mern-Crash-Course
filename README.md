@@ -16,7 +16,11 @@ Welcome to the MERN Crash Course, where you'll build a simple store using the ME
 
 ✅ React frontend to manage products
 
+
+
 🚀 Technologies Used
+
+
 MongoDB (Database)
 
 Express.js (Backend framework)
