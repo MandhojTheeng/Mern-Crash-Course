@@ -7,9 +7,13 @@ Welcome to the MERN Crash Course, where you'll build a simple store using the ME
 
 
 ✅ Add new products to the store
+
 ✅ Remove products from the store
+
 ✅ MongoDB database for storing products
+
 ✅ REST API with Express & Node.js
+
 ✅ React frontend to manage products
 
 🚀 Technologies Used
