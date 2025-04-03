@@ -54,4 +54,31 @@ export const useProductStore = create((set) => ({
     }));
     return { success: true, message: data.message };
   },
+
+  updateProduct: async (pid, updatedProduct) => {
+    const res = await fetch(`/api/products/${pid}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedProduct),
+    });
+
+    const data = await res.json();
+
+    // If the update is unsuccessful, return the failure message
+    if (!data.success) {
+      return { success: false, message: data.message };
+    }
+
+    // Update the products in the store immediately without requiring a page refresh
+    set((state) => ({
+      products: state.products.map((product) =>
+        product._id === pid ? data.data : product
+      ),
+    }));
+
+    // Return success message
+    return { success: true, message: "Product updated successfully!" };
+  },
 }));
